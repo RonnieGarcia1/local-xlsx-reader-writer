@@ -21,18 +21,12 @@ module.exports = readSheetAsJson = () => {
     };
 
     let index = 0;
-    // set client id
     let customerId = data[index].CustomerId;
-    // set date serial
     let dateSerial = data[index].Date;
-    // set min
     let min = Infinity;
-    // set max
     let max = -Infinity;
-    // set balance
     let balance = 0;
-
-    let financialDataArr = [];
+    let reverseFinancialDataArr = [];
     
     // while we are looking at the same client
     while(index <= data.length){
@@ -52,11 +46,9 @@ module.exports = readSheetAsJson = () => {
             maxBalance: max, 
             endingBalance: balance
           }
-          financialDataArr = [financialData, ...financialDataArr]
-          
-          //TODO: writeSheet(financialData)
-          
-          // we are done with the data set, all done
+          reverseFinancialDataArr = [financialData, ...reverseFinancialDataArr]     
+        
+        // we are done with the data set, all done
         if(index === data.length) break;
         
         // reset for new customer
@@ -77,8 +69,8 @@ module.exports = readSheetAsJson = () => {
       }
       index++;
     }
-
+    let financialDataArr = reverseFinancialDataArr.reverse()
+    console.table(financialDataArr)
     return financialDataArr;
-    
     };
-    console.log(readSheetAsJson());
+    readSheetAsJson()
