@@ -1,8 +1,6 @@
 const financialDataJson = require('./readSheet.js')
 
 module.exports = writeSheet = (newFinancialData) => {
-  console.log("A new WorkSheet has been created:")
-  console.table(financialDataJson());
     //requiring module
     const reader = require('xlsx');
     //reading test file
@@ -14,4 +12,4 @@ module.exports = writeSheet = (newFinancialData) => {
     reader.writeFile(file, './testData.xlsx');
 };
 
-writeSheet(financialDataJson())
+writeSheet(financialDataJson());

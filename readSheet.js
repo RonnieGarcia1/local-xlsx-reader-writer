@@ -70,7 +70,6 @@ module.exports = readSheetAsJson = () => {
       index++;
     }
     let financialDataArr = reverseFinancialDataArr.reverse()
-    console.table(financialDataArr)
     return financialDataArr;
     };
-    readSheetAsJson()
+    console.table(readSheetAsJson())
