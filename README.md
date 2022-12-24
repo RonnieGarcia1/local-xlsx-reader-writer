@@ -14,9 +14,8 @@ To view the outputs of the data set from the xlsx file in your cli, run the comm
 ```
 $ node readSheet.js
 ```
-![Screen Shot 2022-12-23 at 2 09 05 PM](https://user-images.githubusercontent.com/86433181/209417285-b26f8782-1ec7-43a5-8573-fbc8d84dac7f.png)
-
 ## WRITE SHEET
+
 To write the output to a new sheet in the workbook, run the command:
 ```
 $ node writeSheet.js
