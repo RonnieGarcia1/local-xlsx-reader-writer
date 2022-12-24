@@ -1,4 +1,4 @@
-Nodejs XLSX READER / WRITER
+## Nodejs XLSX READER / WRITER
 
 Greetings, 
 
@@ -8,14 +8,22 @@ Install dependencies:
 ```
 $ npm install
 ```
+## READ SHEET
+
 To view the outputs of the data set from the xlsx file in your cli, run the command: 
 ```
 $ node readSheet.js
 ```
+![Screen Shot 2022-12-23 at 2 09 05 PM](https://user-images.githubusercontent.com/86433181/209417285-b26f8782-1ec7-43a5-8573-fbc8d84dac7f.png)
+
+## WRITE SHEET
 To write the output to a new sheet in the workbook, run the command:
 ```
 $ node writeSheet.js
 ```
-To view the output in xlsx, drag the "testData.xlsx" file to your local machine after its been written. A new sheet should be visible with the expected output.
+
+After running this command a new sheet in './testData.xlsx' will be created with the expected output.
+
+![Screen Shot 2022-12-23 at 7 03 08 PM](https://user-images.githubusercontent.com/86433181/209417359-c1515dae-a36e-4ddc-90d2-645e3cc2c53c.png)
 
 Thanks for visiting! happy hacking :)
