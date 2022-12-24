@@ -1,11 +1,8 @@
 module.exports = readSheetAsJson = () => {
-  //import module from xlsx
   const reader = require('xlsx');
-  //import xlsx test data
   const file = reader.readFile('./testData.xlsx');
-  //import date serial converter function
   const convertDate = require('./convertDate.js');
-  //initialize empty array
+
   let data = [];
   //All Sheets in workbook
   const sheets = file.SheetNames;
@@ -19,7 +16,8 @@ module.exports = readSheetAsJson = () => {
         data.push(res)  
       });
     };
-
+    
+    //set out variables for date conversion
     let index = 0;
     let customerId = data[index].CustomerId;
     let dateSerial = data[index].Date;
@@ -42,7 +40,7 @@ module.exports = readSheetAsJson = () => {
           let financialData = {
             customerId: customerId,
             MMYYYY: formattedDate,
-            minBalance: min, 
+            minBalance: min,
             maxBalance: max, 
             endingBalance: balance
           }
@@ -72,4 +70,5 @@ module.exports = readSheetAsJson = () => {
     let financialDataArr = reverseFinancialDataArr.reverse()
     return financialDataArr;
     };
+    
     console.table(readSheetAsJson())
